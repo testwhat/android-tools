@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Import by parent build.xml  -->
+<project name="utils" xmlns:ac="antlib:net.sf.antcontrib">
+
+    <property name="utils-script-location" value="${ant.file.utils}" />
+    <dirname file="${utils-script-location}" property="utils.dir" />
+
+    <condition property="batOrSh" value=".bat" else=".sh"><os family="windows" /></condition>
+    <property name="dex2jar" value="${utils.dir}/../dex2jar/d2j-dex2jar-ex-oc${batOrSh}" />
+
+    <taskdef resource="net/sf/antcontrib/antlib.xml" uri="antlib:net.sf.antcontrib">
+        <classpath><pathelement location="${utils.dir}/ant-contrib-0.6.jar" /></classpath>
+    </taskdef>
+
+    <scriptdef name="replacestring" language="javascript">
+        <attribute name="input" />
+        <attribute name="output" />
+        <attribute name="from" />
+        <attribute name="to" />
+        var result = attributes.get("input").replaceAll(attributes.get("from"), attributes.get("to"));
+        project.setNewProperty(attributes.get("output"), result);
+    </scriptdef>
+
+    <target name="untar"><!-- ant untar -Dtargz=file.tar.gz -->
+        <ac:if>
+            <not><isset property="${targz}" /></not>
+            <then><fail message="No input tar.gz" /></then>
+        </ac:if>
+        <untar src="${targz}" dest="framework-class-jars" compression="gzip">
+            <patternset>
+                <include name="**/usbnet_intermediates/classes-full-debug.jar" />
+                <include name="**/wifi-service_intermediates/classes-full-debug.jar" />
+                <include name="**/telephony-common_intermediates/classes-full-debug.jar" />
+                <include name="**/core-libart_intermediates/classes-full-debug.jar" />
+                <include name="**/bouncycastle_intermediates/classes-full-debug.jar" />
+                <include name="**/framework_intermediates/classes-full-debug.jar" />
+                <include name="**/services_intermediates/classes-full-debug.jar" />
+            </patternset>
+        </untar>
+    </target>
+
+    <target name="dex-to-jar-lib">
+        <ac:if>
+            <isset property="dex2jar" />
+            <then><echo message="d2j ok ${dex2jar}" /></then>
+            <else><fail message="no dex2jar" /></else>
+        </ac:if>
+        <mkdir dir="${fwclasspath}" />
+        <apply verbose="true" executable="${dex2jar}" parallel="false">
+            <arg value="-o" />
+            <targetfile />
+            <srcfile />
+            <fileset dir="framework-dex-jars" includes="*.jar" />
+            <mapper type="glob" from="*.jar" to="${fwclasspath}/*-dex2jar.jar"/>
+        </apply>
+    </target>
+
+    <target name="jar-to-jack-lib">
+        <ac:if>
+            <not><isset property="${fwjacks}" /></not>
+            <then><fail message="Missing property fwjacks" /></then>
+        </ac:if>
+        <mkdir dir="${fwjacks}" />
+        <apply verbose="true" executable="${jill}${bat}" parallel="false">
+            <arg value="--tolerant" />
+            <arg value="--verbose" />
+            <arg value="--output" />
+            <targetfile />
+            <srcfile />
+            <fileset dir="${fwclasspath}" includes="*.jar" />
+            <mapper type="glob" from="*.jar" to="${fwjacks}/*.jack"/>
+        </apply>
+    </target>
+
+    <target name="baksmali"><!-- not used -->
+        <fail message="Dex file '${dexfile}' not found">
+            <condition><not>
+                <available file="${dexfile}" />
+            </not></condition>
+        </fail>
+        <java classname="org.jf.baksmali.main" failonerror="true" fork="true" maxmemory="512m">
+            <classpath><pathelement location="${baksmali}" /></classpath>
+            <arg value="-o${smali.output}" />
+            <arg value="${dexfile}" />
+        </java>
+    </target>
+
+</project>

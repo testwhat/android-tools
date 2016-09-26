@@ -1,0 +1,546 @@
+jack.android.api-level.check: (declared by field com.android.jack.backend.dex.compatibility.AndroidCompatibilityChecker.CHECK_COMPATIBILITY)
+     Check compatibility with the Android platform (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.android.min-api-level: (declared by field com.android.jack.Options.ANDROID_MIN_API_LEVEL)
+     Minimum Android API level compatibility (default is '1')
+     an integer belonging to [1 .. 2147483647]
+jack.assert.policy: (declared by field com.android.jack.Options.ASSERTION_POLICY)
+     Assert statement policy (default is 'runtime')
+     {always,never,runtime} (case insensitive) where
+          always: always check assert statements
+          never: remove assert statements
+          runtime: check according to runtime configuration
+jack.classpath.strict: (declared by field com.android.jack.Jack.STRICT_CLASSPATH)
+     Do not ignore missing or malformed class path entries (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.import.jar.debug-info: (declared by field com.android.jack.incremental.CommonFilter.IMPORTED_JAR_DEBUG_INFO)
+     Keep debug info when importing Jars (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.import.resource.policy: (declared by field com.android.jack.resource.ResourceImporter.RESOURCE_COLLISION_POLICY)
+     Defines the policy to follow concerning resource collision (default is 'fail')
+     {keep-first,fail} (case insensitive) where
+          keep-first: keep the first element encountered
+          fail: fail when a collision occurs
+jack.import.type.policy: (declared by field com.android.jack.backend.jayce.JayceFileImporter.COLLISION_POLICY)
+     Defines the policy to follow concerning type collision (default is 'fail')
+     {keep-first,fail} (case insensitive) where
+          keep-first: keep the first element encountered
+          fail: fail when a collision occurs
+jack.java.source.version: (declared by field com.android.jack.Options.JAVA_SOURCE_VERSION)
+     Java source version (default is '1.7')
+     {1.3,1.4,1.5,5.0,5,1.6,6.0,6,1.7,7.0,7,1.8,8.0,8} (case insensitive)
+jack.obfuscation.mapping.dump: (declared by field com.android.jack.shrob.obfuscation.MappingPrinter.MAPPING_OUTPUT_ENABLED)
+     Print the obfuscation mapping (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.mapping.dump.file: (declared by field com.android.jack.shrob.obfuscation.MappingPrinter.MAPPING_OUTPUT_FILE)
+     File where the mapping will be emitted (default is '-[x-windows-950]')
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+jack.preprocessor: (declared by field com.android.jack.preprocessor.PreProcessor.ENABLE)
+     Enable the Jack preprocessor (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.preprocessor.file: (declared by field com.android.jack.preprocessor.PreProcessor.FILE)
+     Preprocessor source file
+     required if 'jack.preprocessor' is set to true
+     a path to a file (must exist, be readable), can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+jack.reporter: (declared by field com.android.jack.reporting.Reporter.REPORTER)
+     Define which reporter will be used (default is 'default')
+     {default,sdk}
+jack.reporter.file: (declared by field com.android.jack.reporting.Reporter.REPORTER_WRITER)
+     File where the reporter will write (default is '--[x-windows-950]')
+     required if 'jack.reporter' is set to 'default' or 'jack.reporter' is set to 'sdk'
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+jack.reporter.level.file: (declared by field com.android.jack.reporting.Reporter.REPORTER_WRITER_BY_LEVEL)
+     File where the reporter will write by level (default is '')
+     [<pair-1>[,...[,<pair-n>]]] where <pair-i> is <level>=<file> where <level> is {error,warning,info} (case insensitive) and where <file> is a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+
+Provisional properties (subject to change):
+
+config.printer: (declared by field com.android.sched.util.config.ConfigPrinterFactory.CONFIG_PRINTER)
+     Define which config printer to use (default is 'none')
+     {none,properties-file}
+config.printer.file: (declared by field com.android.sched.util.config.ConfigPrinterFactory.CONFIG_PRINTER_FILE)
+     The file where to print the config (default is '-')
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error
+jack.android.remove-typedef: (declared by field com.android.jack.transformations.typedef.TypeDefRemover.REMOVE_TYPEDEF)
+     Removes @StringDef, @IntDef and all annotations annotated with them (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation-processor: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_ENABLED)
+     Enable annotation processors (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation-processor.class.output: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_CLASS_OUTPUT_DIR)
+     Output folder for classes generated by annotation processors
+     a path to a directory (must exist, be readable, be writable)
+jack.annotation-processor.manual: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_MANUAL)
+     run only specified annotation processors (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation-processor.manual.list: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_MANUAL_LIST)
+     Annotation processor class names
+     required if 'jack.annotation-processor.manual' is set to true
+     [<class-1>[,...[,<class-n>]]] where <class-i> is a java class name (e.g. java.lang.Object)
+jack.annotation-processor.options: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_OPTIONS)
+     Options for annotation processors (default is '')
+     [<pair-1>[,...[,<pair-n>]]] where <pair-i> is <option>=<value> where <option> is an annotation processor option name and where <value> is an annotation processor option value
+jack.annotation-processor.path: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_PATH)
+     Use annotation processor classpath for annotation processor loading (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation-processor.path.list: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_PATH_LIST)
+     Annotation processor classpath
+     required if 'jack.annotation-processor.path' is set to true
+     [<file-or-dir-1>[;...[;<file-or-dir-n>]]] where <file-or-dir-i> is a path to a file or directory (must exist, be readable)
+jack.annotation-processor.source.output: (declared by field com.android.jack.Options.ANNOTATION_PROCESSOR_SOURCE_OUTPUT_DIR)
+     Output folder for sources generated by annotation processors
+     a path to a directory (must exist, be readable, be writable)
+jack.annotation.class-retention: (declared by field com.android.jack.shrob.obfuscation.annotation.AnnotationRemover.EMIT_CLASS_RETENTION_ANNOTATION)
+     Emit annotations that have a class retention (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation.parameter.class-retention: (declared by field com.android.jack.shrob.obfuscation.annotation.ParameterAnnotationRemover.EMIT_CLASS_RETENTION_PARAMETER_ANNOTATION)
+     Emit parameters annotations that have a class retention (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation.parameter.runtime-retention: (declared by field com.android.jack.shrob.obfuscation.annotation.ParameterAnnotationRemover.EMIT_RUNTIME_RETENTION_PARAMETER_ANNOTATION)
+     Emit parameters annotations that have a runtime retention (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation.parameter.source-retention: (declared by field com.android.jack.shrob.obfuscation.annotation.ParameterAnnotationRemover.EMIT_SOURCE_RETENTION_PARAMETER_ANNOTATION)
+     Emit parameters annotations that have a source retention (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation.runtime-retention: (declared by field com.android.jack.shrob.obfuscation.annotation.AnnotationRemover.EMIT_RUNTIME_RETENTION_ANNOTATION)
+     Emit annotations that have a runtime retention (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.annotation.source-retention: (declared by field com.android.jack.shrob.obfuscation.annotation.AnnotationRemover.EMIT_SOURCE_RETENTION_ANNOTATION)
+     Emit annotations that have a source retention (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.classpath: (declared by field com.android.jack.Options.CLASSPATH)
+     Classpath (default is '')
+     [<jack-or-jar-1>[;...[;<jack-or-jar-n>]]] where <jack-or-jar-i> is a path to a Jack library or a Jar
+jack.classpath.default-libraries: (declared by field com.android.jack.Options.USE_DEFAULT_LIBRARIES)
+     Use default libraries as first classpath entries (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.classpath.jar.debug-info: (declared by field com.android.jack.incremental.CommonFilter.CLASSPATH_JAR_DEBUG_INFO)
+     Keep debug info when using Jars on classpath (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.classpath.jar.tolerant: (declared by field com.android.jack.incremental.CommonFilter.CLASSPATH_JAR_TOLERANT)
+     Tolerate malformed Jars on classpath (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex: (declared by field com.android.jack.Options.GENERATE_DEX_FILE)
+     Generate dex file (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.annotation.class-retention: (declared by field com.android.jack.backend.dex.AnnotationBuilder.CLASS_RETENTION)
+     Emit annotations with class retention in the final dex (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.debug.lines: (declared by field com.android.jack.Options.EMIT_LINE_NUMBER_DEBUG_INFO)
+     Emit line number debug info into generated dex (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.debug.source: (declared by field com.android.jack.Options.EMIT_SOURCE_FILE_DEBUG_INFO)
+     Emit source file debug info into generated dex (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.debug.vars: (declared by field com.android.jack.Options.EMIT_LOCAL_DEBUG_INFO)
+     Emit local variable debug info into generated dex (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.debug.vars.synthetic: (declared by field com.android.jack.backend.dex.rop.CodeItemBuilder.EMIT_SYNTHETIC_LOCAL_DEBUG_INFO)
+     Emit synthetic local variable debug info into generated dex (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.forcejumbo: (declared by field com.android.jack.backend.dex.rop.CodeItemBuilder.FORCE_JUMBO)
+     Force string opcodes to be emitted as jumbo in dex (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.optimize: (declared by field com.android.jack.backend.dex.rop.CodeItemBuilder.DEX_OPTIMIZE)
+     Define if Dex optimizations are activated (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.optimizebranches: (declared by field com.android.jack.backend.dex.rop.CodeItemBuilder.OPTIMIZE_BRANCHES)
+     Remove redundant branches in dex (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.output.container: (declared by field com.android.jack.Options.DEX_OUTPUT_CONTAINER_TYPE)
+     Output container type
+     required if 'jack.dex' is set to true
+     {dir,zip} (case insensitive)
+jack.dex.output.dir: (declared by field com.android.jack.Options.DEX_OUTPUT_DIR)
+     Output folder for dex
+     required if 'jack.dex.output.container' is set to 'dir'
+     a path to an output directory (must exist, be readable, be writable)
+jack.dex.output.multidex.legacy: (declared by field com.android.jack.backend.dex.MultiDexLegacy.MULTIDEX_LEGACY)
+     Enable multidex compatibility support for devices that do not have native runtime support (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.dex.output.policy: (declared by field com.android.jack.backend.dex.DexFileWriter.DEX_WRITING_POLICY)
+     Define which policy will be used to emit dex files (default is 'single-dex')
+     {minimal-multidex,multidex,single-dex} where
+          minimal-multidex: allow emitting several dex files, keeping the first dex (main dex) as small as possible
+          multidex: allow emitting several dex files
+          single-dex: only emit one dex file
+jack.dex.output.zip: (declared by field com.android.jack.Options.DEX_OUTPUT_ZIP)
+     Output zip archive for dex
+     required if 'jack.dex.output.container' is set to 'zip'
+     a path to a zip archive (must be readable, be writable)
+jack.import.jar.tolerant: (declared by field com.android.jack.incremental.CommonFilter.IMPORTED_JAR_TOLERANT)
+     Tolerate import of malformed Jars (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.import.meta: (declared by field com.android.jack.meta.MetaImporter.IMPORTED_META)
+     Meta to import (default is '')
+     [<dir-1>[,...[,<dir-n>]]] where <dir-i> is a path to a directory (must exist, be readable)
+jack.import.resource: (declared by field com.android.jack.resource.ResourceImporter.IMPORTED_RESOURCES)
+     Resources to import (default is '')
+     [<dir-1>[;...[;<dir-n>]]] where <dir-i> is a path to a directory (must exist, be readable)
+jack.incremental: (declared by field com.android.jack.Options.INCREMENTAL_MODE)
+     Enable incremental mode (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.incremental.log: (declared by field com.android.jack.incremental.IncrementalInputFilter.INCREMENTAL_LOG)
+     Enable incremental log (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.input.filter: (declared by field com.android.jack.Options.INPUT_FILTER)
+     Inputs filter (default is 'no-filter')
+     {incremental,no-filter}
+jack.internal.dropmethodbody: (declared by field com.android.jack.Options.DROP_METHOD_BODY)
+     Drop method bodies when they are no longer useful (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.internal.filter.method: (declared by field com.android.jack.Options.METHOD_FILTER)
+     Define which filter will be used for methods (default is 'all-methods')
+     {all-methods,method-with-signature,reject-all-methods,supported-methods}
+jack.internal.filter.method.signature: (declared by field com.android.jack.util.filter.SignatureMethodFilter.METHOD_SIGNATURE_FILTER)
+     Method signature that will be accepted by the filter
+     required if 'jack.internal.filter.method' is set to 'method-with-signature'
+     a method signature (for instance "methodname(ILpackage1/package2/Classname;)B")
+jack.internal.jayce.loader.classpath.policy: (declared by field com.android.jack.Jack.CLASSPATH_POLICY)
+     Hint on default load policy for classpath entries (default is 'type')
+     {full,structure,type} where
+          full: always read full information
+          structure: start by always reading structure information (ie members, annotations, markers etc)
+          type: start by only reading type and name information
+jack.internal.jayce.loader.import.policy: (declared by field com.android.jack.Jack.IMPORT_POLICY)
+     Hint on default load policy for import entries (default is 'type')
+     {full,structure,type} where
+          full: always read full information
+          structure: start by always reading structure information (ie members, annotations, markers etc)
+          type: start by only reading type and name information
+jack.internal.structure.print: (declared by field com.android.jack.shrob.shrink.ShrinkStructurePrinter.STRUCTURE_PRINTING)
+     List all types and members (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.internal.structure.print.file: (declared by field com.android.jack.shrob.shrink.ShrinkStructurePrinter.STRUCTURE_PRINTING_FILE)
+     File containing the list of all types and members (default is '-[x-windows-950]')
+     required if 'jack.internal.structure.print' is set to true
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+jack.lambda.anonymous: (declared by field com.android.jack.Options.LAMBDA_TO_ANONYMOUS_CONVERTER)
+     Enable lambda support with an anonymous class (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.legacy.dx.initialvalue.class: (declared by field com.android.jack.backend.dex.FieldInitializerRemover.CLASS_AS_INITIALVALUE)
+     Emit class literal as initial value of field (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.legacy.runtime.initialvalue.string: (declared by field com.android.jack.backend.dex.FieldInitializerRemover.STRING_AS_INITIALVALUE_OF_OBJECT)
+     Emit string literal as initial value of field (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.legacy.runtime.visibilitybridges: (declared by field com.android.jack.transformations.VisibilityBridgeAdder.VISIBILITY_BRIDGE)
+     Generate visibility bridges (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.library: (declared by field com.android.jack.Options.GENERATE_JACK_LIBRARY)
+     Generate jack library (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.library.dex: (declared by field com.android.jack.Options.GENERATE_DEX_IN_LIBRARY)
+     Generate dex files in library (default is 'true')
+     required if 'jack.library' is set to true
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.library.digest: (declared by field com.android.jack.library.JackLibraryFactory.GENERATE_JACKLIB_DIGEST)
+     Generate message digest in Jack library (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.library.digest.algo: (declared by field com.android.jack.library.JackLibraryFactory.MESSAGE_DIGEST_ALGO)
+     Message digest algorithm use in Jack library (default is 'SHA')
+     required if 'jack.library.digest' is set to true
+     {MD2,MD5,SHA,SHA-224,SHA-256,SHA-384,SHA-512} (case sensitive)
+jack.library.import: (declared by field com.android.jack.Options.IMPORTED_LIBRARIES)
+     Libraries to import (default is '')
+     [<jack-or-jar-1>[,...[,<jack-or-jar-n>]]] where <jack-or-jar-i> is a path to a Jack library or a Jar
+jack.library.output.container: (declared by field com.android.jack.Options.LIBRARY_OUTPUT_CONTAINER_TYPE)
+     Library output container type
+     required if 'jack.library' is set to true
+     {dir,zip} (case insensitive)
+jack.library.output.dir: (declared by field com.android.jack.Options.LIBRARY_OUTPUT_DIR)
+     Output folder for library
+     required if 'jack.library' is set to true and 'jack.library.output.container' is set to 'dir'
+     a path to a directory (must exist, be readable, be writable)
+jack.library.output.zip: (declared by field com.android.jack.Options.LIBRARY_OUTPUT_ZIP)
+     Output zip archive for library
+     required if 'jack.library' is set to true and 'jack.library.output.container' is set to 'zip' or 'jack.library.from-incremental-folder' is set to true
+     a path to a zip archive (must be readable, be writable)
+jack.library.prebuilt.use: (declared by field com.android.jack.Options.USE_PREBUILT_FROM_LIBRARY)
+     Use prebuilt files from library (default is 'true')
+     required if 'jack.dex' is set to true or 'jack.library' is set to true
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.classdictionary: (declared by field com.android.jack.shrob.obfuscation.Renamer.USE_CLASS_OBFUSCATION_DICTIONARY)
+     Use obfuscation dictionary for classes (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.classdictionary.file: (declared by field com.android.jack.shrob.obfuscation.Renamer.CLASS_OBFUSCATION_DICTIONARY)
+     Obfuscation dictionary for classes
+     required if 'jack.obfuscation.classdictionary' is set to true
+     a path to a file or directory
+jack.obfuscation.dictionary: (declared by field com.android.jack.shrob.obfuscation.Renamer.USE_OBFUSCATION_DICTIONARY)
+     Use obfuscation dictionary for members (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.dictionary.file: (declared by field com.android.jack.shrob.obfuscation.Renamer.OBFUSCATION_DICTIONARY)
+     Obfuscation dictionary for members
+     required if 'jack.obfuscation.dictionary' is set to true
+     a path to a file or directory
+jack.obfuscation.flattenpackage: (declared by field com.android.jack.shrob.obfuscation.Renamer.FLATTEN_PACKAGE)
+     Change package for all renamed packages (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.flattenpackage.package: (declared by field com.android.jack.shrob.obfuscation.Renamer.PACKAGE_FOR_RENAMED_PACKAGES)
+     Enclosing package for all renamed packages
+     required if 'jack.obfuscation.flattenpackage' is set to true
+     a java package name (e.g. com.android)
+jack.obfuscation.mapping: (declared by field com.android.jack.shrob.obfuscation.Renamer.USE_MAPPING)
+     Use mapping for types and members (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.mapping.collision-policy: (declared by field com.android.jack.shrob.obfuscation.MappingApplier.COLLISION_POLICY)
+     Abort obfuscation when a mapping collision is detected (default is 'fail')
+     {ignore,fail} (case insensitive)
+jack.obfuscation.mapping.file: (declared by field com.android.jack.shrob.obfuscation.Renamer.MAPPING_FILE)
+     File containing the mapping of all types and members (default is 'mapping.txt')
+     a path to a file or directory
+jack.obfuscation.mixedcaseclassname: (declared by field com.android.jack.Options.USE_MIXED_CASE_CLASSNAME)
+     Use mixed case class name when obfuscating (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.nameprovider: (declared by field com.android.jack.shrob.obfuscation.NameProviderFactory.NAMEPROVIDER)
+     Define which nameprovider to use (default is 'lower-case')
+     {lower-case,mixed-case}
+jack.obfuscation.packagedictionary: (declared by field com.android.jack.shrob.obfuscation.Renamer.USE_PACKAGE_OBFUSCATION_DICTIONARY)
+     Use obfuscation dictionary for packages (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.packagedictionary.file: (declared by field com.android.jack.shrob.obfuscation.Renamer.PACKAGE_OBFUSCATION_DICTIONARY)
+     Obfuscation dictionary for packages
+     required if 'jack.obfuscation.packagedictionary' is set to true
+     a path to a file or directory
+jack.obfuscation.renamesourcefile: (declared by field com.android.jack.shrob.obfuscation.SourceFileRenamer.RENAME_SOURCEFILE)
+     Rename source file (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.renamesourcefile.newname: (declared by field com.android.jack.shrob.obfuscation.SourceFileRenamer.NEW_SOURCEFILE_NAME)
+     New source file name (default is '')
+     required if 'jack.obfuscation.renamesourcefile' is set to true
+     a path to a file or directory
+jack.obfuscation.repackageclasses: (declared by field com.android.jack.shrob.obfuscation.Renamer.REPACKAGE_CLASSES)
+     Change package for all renamed classes (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.obfuscation.repackageclasses.package: (declared by field com.android.jack.shrob.obfuscation.Renamer.PACKAGE_FOR_RENAMED_CLASSES)
+     Enclosing package for all renamed classes
+     required if 'jack.obfuscation.repackageclasses' is set to true
+     a java package name (e.g. com.android)
+jack.obfuscation.uniqueclassmembernames: (declared by field com.android.jack.shrob.obfuscation.Renamer.USE_UNIQUE_CLASSMEMBERNAMES)
+     All members with the same name must have the same obfuscated name (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.def-use-simplifier: (declared by field com.android.jack.optimizations.Optimizations.DefUseSimplifier.ENABLE)
+     Optimize def/use chain (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.enum.switch: (declared by field com.android.jack.Options.OPTIMIZED_ENUM_SWITCH)
+     Optimize enum switch (default is 'never')
+     {feedback,always,never} (case insensitive)
+jack.optimization.expression-simplifier: (declared by field com.android.jack.optimizations.Optimizations.ExpressionSimplifier.ENABLE)
+     Optimize expressions using constants (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.if-simplifier: (declared by field com.android.jack.optimizations.Optimizations.IfSimplifier.ENABLE)
+     Optimize 'if' expressions using a boolean constant (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.inner-class.accessors: (declared by field com.android.jack.Options.OPTIMIZE_INNER_CLASSES_ACCESSORS)
+     Avoid creating synthethic accessors for outer class private fields and methods (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.not-simplifier: (declared by field com.android.jack.optimizations.Optimizations.NotSimplifier.ENABLE)
+     Optimize '!' operator (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.null-instanceof-simplifier: (declared by field com.android.jack.optimizations.Optimizations.ENABLE_NULL_INSTANCEOF)
+     Optimize null instanceof (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.tail-recursion: (declared by field com.android.jack.Options.OPTIMIZE_TAIL_RECURSION)
+     Optimize tail recursive calls (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.optimization.use-def-simplifier: (declared by field com.android.jack.optimizations.Optimizations.UseDefSimplifier.ENABLE)
+     Optimize use/def chain (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.repackaging: (declared by field com.android.jack.transformations.renamepackage.PackageRenamer.JARJAR_ENABLED)
+     Enable repackaging (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.repackaging.files: (declared by field com.android.jack.transformations.renamepackage.PackageRenamer.JARJAR_FILES)
+     Jarjar rules files
+     required if 'jack.repackaging' is set to true
+     <file-1>[,<file-2>[,...[,<file-n>]]] where <file-i> is a path to a file (must exist, be readable), can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+jack.sanity-checks: (declared by field com.android.jack.Options.SANITY_CHECKS)
+     Compiler sanity checks (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.seed.dump.file: (declared by field com.android.jack.shrob.seed.SeedPrinter.SEEDS_OUTPUT_FILE)
+     File where the seeds will be printed (default is '-[x-windows-950]')
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+jack.shrink.keep.enclosing.method: (declared by field com.android.jack.shrob.shrink.KeeperBrush.KEEP_ENCLOSING_METHOD)
+     Keep the enclosing method of anonymous classes (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.shrob: (declared by field com.android.jack.Options.SHROB_ENABLED)
+     Enable shrink and obfuscation features (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.shrob.seed.searchinhierarchy: (declared by field com.android.jack.shrob.seed.SeedFinder.SEARCH_SEEDS_IN_HIERARCHY)
+     Search for shrob seeds in hierarchy (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.source: (declared by field com.android.jack.Options.SOURCES)
+     Sources to compile (default is '')
+     [<file-or-dir-1>[;...[;<file-or-dir-n>]]] where <file-or-dir-i> is a path to a file (must exist, be readable) or a path to a directory (must exist, be readable)
+jack.source.digest: (declared by field com.android.jack.digest.OriginDigestFeature.ORIGIN_DIGEST)
+     Generate digest for source identification (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.source.digest.algo: (declared by field com.android.jack.digest.OriginDigestFeature.ORIGIN_DIGEST_ALGO)
+     Digest algorithm use for source identification (default is 'SHA')
+     required if 'jack.source.digest' is set to true
+     {MD2,MD5,SHA,SHA-224,SHA-256,SHA-384,SHA-512} (case sensitive)
+jack.source.path: (declared by field com.android.jack.Options.SOURCE_PATH)
+     Source path (default is '')
+     [<file-or-dir-1>[;...[;<file-or-dir-n>]]] where <file-or-dir-i> is a path to a file or directory (must exist, be readable)
+jack.statistic.source: (declared by field com.android.jack.Options.ENABLE_COMPILED_FILES_STATISTICS)
+     Enable compiled files statistics (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.transformation.reusesyncvariable: (declared by field com.android.jack.transformations.ast.SynchronizeTransformer.REUSE_SYNC_VARIABLE)
+     Reduce the 'get class' usage in static synchronized methods by reusing a local variable (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+jack.verbose.level: (declared by field com.android.jack.Options.VERBOSITY_LEVEL)
+     Verbosity level (default is 'WARNING')
+     {ERROR,WARNING,INFO,DEBUG,TRACE} (case sensitive)
+sched.data: (declared by field com.android.sched.util.sched.ManagedDataListenerFactory.DATA_LISTENER)
+     Define which data processor to use (default is 'none')
+     {dot,none,text}
+sched.dotfile: (declared by field com.android.sched.util.sched.ManagedDataAsDot.DOT_FILE)
+     Define in which file generates data as dot (default is 'schedlib.dot')
+     a path to a file or directory
+sched.failedstop: (declared by field com.android.sched.SchedProperties.FAILED_STOP)
+     Define if the SchedLib stop at the first failed (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.filter.skip-adapter: (declared by field com.android.sched.scheduler.ScheduleInstance.SKIP_ADAPTER)
+     Skip adapter as soon as possible (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.genetic.add: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.ADD_RUNNER)
+     Probability to add a runner (default is '0.15')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.add.post: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.ADD_POST_RUNNER)
+     Probability to add a satisfied runner after a satisfied one (default is '0.3')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.add.pre: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.ADD_PRE_RUNNER)
+     Probability to add a runner before another one in order to satisfied it (default is '0.9')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.duration: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.MAX_DURATION)
+     Maximum time (in milliseconds) to spend before stopping (default is '60000')
+     an integer belonging to [0 .. 2147483647]
+sched.genetic.elite: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.ELITE_COUNT)
+     Size of the elite population (default is '2')
+     an integer belonging to [0 .. 2147483647]
+sched.genetic.move.satisfied: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.MOVE_RUNNER)
+     Probability to move a satisfied runner (default is '0.6')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.population: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.POPULATION_SIZE)
+     Size of the population (default is '10')
+     an integer belonging to [1 .. 2147483647]
+sched.genetic.remove: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.REMOVE_RUNNER)
+     Probability to remove a runner (default is '0.5')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.remove.unsatisfied: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.REMOVE_UNSATISFIED_RUNNER)
+     Probability to remove an unsatisfied runner (default is '0.6')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.selection.pressure: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.SELECTION_PRESSURE)
+     Selection pressure (default is '0.5')
+     a probability belonging to [0 (never) .. 1 (always)]
+sched.genetic.stagnation: (declared by field com.android.sched.scheduler.genetic.GeneticHardcodedPlanner.STAGNATION)
+     Number of times a population stagnates before stopping (default is '1000')
+     an integer belonging to [1 .. 2147483647]
+sched.itemset.compact: (declared by field com.android.sched.item.ItemSet.COMPACT_TOSTRING)
+     Define if item sets are displayed compacted (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.onlyfor: (declared by field com.android.sched.SchedProperties.ONLY_FOR)
+     Define which items to take into account (default is 'default')
+     {default,internal,nothing,schedtest}
+sched.plan.printer: (declared by field com.android.sched.scheduler.PlanPrinterFactory.PLAN_PRINTER)
+     Define which plan printer to use (default is 'none')
+     {detailed-txt,none,serializer,simple-txt}
+sched.plan.printer.file: (declared by field com.android.sched.scheduler.PlanPrinterFactory.PLAN_PRINTER_FILE)
+     The file where to print the plan (default is '-[x-windows-950]')
+     required if 'sched.plan.printer' is set to 'detailed-txt' or 'sched.plan.printer' is set to 'serializer' or 'sched.plan.printer' is set to 'simple-txt'
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+sched.planner: (declared by field com.android.sched.scheduler.PlannerFactory.PLANNER_PROVIDER)
+     Define which planner to use to compute plan (default is 'manual')
+     {deserializer,genetic,manual}
+sched.planner.file: (declared by field com.android.sched.scheduler.PlannerFactory.PLANNER_FILE)
+     The file to read the plan from
+     required if 'sched.planner' is set to 'deserializer'
+     a path to a file (must exist, be readable), can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+sched.report.file: (declared by field com.android.sched.util.sched.ManagedDataAsReport.FILE)
+     The file where to print the report (default is '-[x-windows-950]')
+     required if 'sched.data' is set to 'text'
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+sched.report.format: (declared by field com.android.sched.util.sched.ManagedDataAsReport.PRINTER)
+     Define which format to use (default is 'text')
+     required if 'sched.data' is set to 'text'
+     {json,text}
+sched.runner: (declared by field com.android.sched.scheduler.ScheduleInstance.DEFAULT_RUNNER)
+     Kind of runner for runnable (default is 'multi-threaded')
+     {multi-threaded,single-threaded}
+sched.runner.stack-size: (declared by field com.android.sched.scheduler.ScheduleInstance.DEFAULT_STACK_SIZE)
+     Size of Worker stack in bytes (default is '2097152')
+     an integer belonging to [0 .. 9223372036854775807]
+sched.runner.thread.detector.frequency: (declared by field com.android.sched.scheduler.MultiWorkersScheduleInstance.CHECK_FREQUENCY)
+     Define at which frequency the detector is triggered (in ms) (default is '30000')
+     required if 'sched.runner' is set to 'multi-threaded'
+     an integer belonging to [100 .. 2147483647]
+sched.runner.thread.detector.long-running.timeout: (declared by field com.android.sched.scheduler.MultiWorkersScheduleInstance.LongRunning.TIMEOUT)
+     Duration allowed by the detector before aborting compilation (in ms) (default is '3600000')
+     an integer belonging to [0 .. 9223372036854775807]
+sched.runner.thread.detectors: (declared by field com.android.sched.scheduler.MultiWorkersScheduleInstance.Detector.DETECTORS)
+     Set a list of detectors (default is 'deadlock,long-running')
+     required if 'sched.runner' is set to 'multi-threaded'
+     <detector-1>[,<detector-2>[,...[,<detector-n>]]] where <detector-i> is {deadlock,long-running,none}
+sched.runner.thread.fixed.count: (declared by field com.android.sched.scheduler.MultipleScheduleInstance.NUM_FIXED_THREADS)
+     Number of threads used by the scheduler
+     required if 'sched.runner.thread.kind' is set to 'fixed'
+     an integer belonging to [2 .. 2147483647]
+sched.runner.thread.kind: (declared by field com.android.sched.scheduler.MultipleScheduleInstance.NUM_THREADS_POLICY)
+     Number of threads policy used by the scheduler (default is 'num-cores')
+     required if 'sched.runner' is set to 'multi-threaded'
+     {num-cores,fixed} (case insensitive)
+sched.runner.thread.synchronized: (declared by field com.android.sched.scheduler.MultiWorkersScheduleInstance.MANAGED_SYNC)
+     If scheduler manages synchronized schedulable by itself (default is 'true')
+     required if 'sched.runner' is set to 'multi-threaded'
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.tracer: (declared by field com.android.sched.util.log.TracerFactory.TRACER)
+     Define which tracer to use (default is 'none')
+     {html,none,stat-only} where
+          stat-only: collect statistics without event information
+sched.tracer.dir: (declared by field com.android.sched.util.log.tracer.StatsTracerFtl.TRACER_DIR)
+     Define in which directory the tracer generates files
+     required if 'sched.tracer' is set to 'html'
+     a path to a directory (must exist, be readable, be writable)
+sched.tracer.dir.add-config-name: (declared by field com.android.sched.util.log.tracer.StatsTracerFtl.TRACER_DIR_WITH_CONFIG)
+     Generate tracer files in an additional sub-directory named after the configuration (default is 'false')
+     required if 'sched.tracer' is set to 'html'
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.tracer.file: (declared by field com.android.sched.util.log.StatisticOnlyTracer.STREAM)
+     The file where to print statistics (default is '-[x-windows-950]')
+     required if 'sched.tracer' is set to 'stat-only'
+     a path to a file (must be writable), can be '-' for standard output, can be '--' for standard error, can be ended by [<charset>] where <charset> is {Big5,Big5-HKSCS,CESU-8,EUC-JP,EUC-KR,<...>} (case insensitive)
+sched.tracer.format: (declared by field com.android.sched.util.log.StatisticOnlyTracer.PRINTER)
+     Define which format to use (default is 'text')
+     required if 'sched.tracer' is set to 'stat-only'
+     {json,text}
+sched.tracer.probe.heap-allocation.site: (declared by field com.android.sched.util.log.tracer.probe.HeapAllocationProbe.GET_ALLOCATION_SITE)
+     Get allocation site information during statistics (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.tracer.probes: (declared by field com.android.sched.util.log.tracer.ProbeManager.PROBE_MANAGER)
+     Define which probes use for tracing (default is 'event-count,gc-count,gc-duration,wall-clock')
+     <probe-1>[,<probe-2>[,...[,<probe-n>]]] where <probe-i> is {event-count,gc-count,gc-duration,heap-alloc-count,heap-alloc-size,heap-usage,jit-duration,thread-contention-count,thread-contention-duration,thread-cpu-time,wall-clock}
+sched.tracer.thread: (declared by field com.android.sched.util.log.tracer.AbstractTracer.PARENT_THREAD_SUPORT)
+     If tracer follows parent thread creation (default is 'true')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.tracer.watchers: (declared by field com.android.sched.util.log.tracer.AbstractTracer.WATCHER_INSTALL)
+     Define which watchers use for tracing (default is '')
+     [<watcher-1>[,...[,<watcher-n>]]] where <watcher-i> is {array-alloc,arraylist-capacity,jnode-alloc,object-alloc,total-object-alloc,type-size} where
+          array-alloc: record array allocations type by type
+          arraylist-capacity: record state of the array backed by ArrayList
+          jnode-alloc: record all JNode allocations
+          object-alloc: record object and array allocations type by type
+          total-object-alloc: record object and array allocations globally
+          type-size: record type size
+sched.vfs.case-insensitive.algo: (declared by field com.android.sched.vfs.CaseInsensitiveFS.ALGO)
+     Algorithm used to encode a path name (default is 'SHA')
+     {MD2,MD5,SHA,SHA-224,SHA-256,SHA-384,SHA-512} (case sensitive)
+sched.vfs.case-insensitive.debug: (declared by field com.android.sched.vfs.CaseInsensitiveFS.DEBUG)
+     generate an index file 'index.dbg' for debugging purpose (default is 'false')
+     {true,yes,on,1,false,no,off,0} (case insensitive)
+sched.vfs.case-insensitive.group.count: (declared by field com.android.sched.vfs.CaseInsensitiveFS.NB_GROUP)
+     Number of directory used to encode a path name (default is '1')
+     an integer belonging to [0 .. 2147483647]
+sched.vfs.case-insensitive.group.size: (declared by field com.android.sched.vfs.CaseInsensitiveFS.SZ_GROUP)
+     Number of letters in directory name used to encode a path name (default is '2')
+     required if 'sched.vfs.case-insensitive.group.count' is greater than 0
+     an integer belonging to [0 .. 2147483647]
