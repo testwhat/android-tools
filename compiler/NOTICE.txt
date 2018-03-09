@@ -1,0 +1,20 @@
+# d8
+https://r8.googlesource.com/r8
+
+# desugar
+https://android.googlesource.com/platform/external/desugar/
+
+# dx
+https://android.googlesource.com/platform/dalvik/+/master/dx/
+
+# jack
+https://android.googlesource.com/toolchain/jack/+/ub-jack
+
+# ecj
+http://www.eclipse.org/jdt/
+https://mvnrepository.com/artifact/org.eclipse.jdt.core.compiler/ecj
+
+# javac (9+181-r4173-1)
+https://github.com/google/error-prone-javac
+https://bazel.googlesource.com/bazel/+/master/third_party/java/jdk/langtools/
+
