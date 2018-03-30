@@ -1,0 +1,2 @@
+https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+https://dl.google.com/android/android-sdk_r24.4.1-windows.zip
